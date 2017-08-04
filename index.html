@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+
+    <head>
+        <meta charset="UTF-8">
+        <title>基于jQuery的手风琴插件</title>
+        <style type="text/css">
+            * {
+                padding: 0;
+                margin: 0;
+                list-style: none;
+            }
+            
+            ul.sidebar-menu {
+                width: 200px;
+                padding: 10px;
+            }
+            
+            ul.sidebar-menu>li>a {
+                font-size: 16px;
+                line-height: 20px;
+                color: #000;
+                text-decoration: none;
+            }
+            
+            ul.sidebar-menu>li>a:hover,
+            ul.sidebar-menu>li>a.active {
+                background-color: #675C7C;
+                color: white;
+            }
+            
+            ul.sidebar-menu>li>ul {
+                display: none;
+            }
+            
+            ul.sidebar-menu>li>ul>li>a {
+                display: inline-block;
+                font-size: 14px;
+                line-height: 18px;
+                color: #000;
+                text-decoration: none;
+            }
+        </style>
+    </head>
+
+    <body>
+        <ul class="sidebar-menu">
+            <li class="treeview">
+                <a href="#">
+                    标题1
+                </a>
+                <ul>
+                    <li class="">
+                        <a href="index.html">标题1-1</a>
+                    </li>
+                    <li>
+                        <a href="index2.html">标题1-2</a>
+                    </li>
+                </ul>
+            </li>
+            <li class="treeview">
+                <a href="#">
+                    标题2
+                </a>
+                <ul>
+                    <li class="">
+                        <a href="index.html">标题2-1</a>
+                    </li>
+                    <li>
+                        <a href="index2.html">标题2-2</a>
+                    </li>
+                </ul>
+            </li>
+        </ul>
+        <script src="https://cdn.bootcss.com/jquery/1.12.4/jquery.min.js"></script>
+        <script src="jquery.accordion.js" type="text/javascript" charset="utf-8"></script>
+        <script type="text/javascript">
+            $(function() {
+                $('.sidebar-menu').accordion({
+                    //获取树干元素
+                    treeTrunk: '.treeview a'
+                })
+            })
+        </script>
+
+    </body>
+
+</html>
